@@ -1,5 +1,6 @@
 import React from 'react';
-import './App.css';
+import './Styles/style.css';
+import './Styles/reset.css'
 import {Route, Routes} from 'react-router-dom'
 import Home from './Pages/Home';
 import NavMenu from './Components/NavMenu';
