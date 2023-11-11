@@ -5,7 +5,9 @@ import NavBar from './components/NavBar'
 export default function App() {
   return (
     <>
+      <div className="px-20">
       <NavBar />
+      </div>
     </>
   )
 }
