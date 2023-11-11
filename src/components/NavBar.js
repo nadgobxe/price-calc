@@ -1,10 +1,9 @@
 import React, {useState} from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCity } from "@fortawesome/free-solid-svg-icons";
+import { NavLink } from "react-router-dom";
 
-export default function NavBar() {
-
-    const {menu, setMenu} = useState('')
+export default function NavBar({menu}) {
 
   return (
     <>
@@ -15,7 +14,13 @@ export default function NavBar() {
             icon={faCity}
           />
         </div>
-        <div className="basis-1/2">Menu</div>
+        <div className="basis-1/2 flex flex-row content-center justify-around">
+            {menu && menu.map((menuItem) => (
+                <NavLink to={`/${menuItem.replace(/\s+/g, '').toLowerCase()}`} key={menuItem}>
+                {menuItem}
+              </NavLink>
+            ) )}
+        </div>
       </div>
     </>
   );
