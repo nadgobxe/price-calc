@@ -18,18 +18,20 @@ export default function App() {
   ]);
 
   const handleMenu = (newMenu) => {
-    setMenu(newMenu)
+    setMenu(prevMenu => [...prevMenu, newMenu])
   }
 
   return (
     <>
       <div className="px-20">
       <NavBar menu={menu} />
+      <div className='p-10'>
       <Routes>
       {menu.map(menuItem => (
             <Route key={menuItem.path} path={menuItem.path} element={React.createElement(menuItem.component)} />
           ))}
         </Routes>
+      </div>
       </div>
     </>
   )
